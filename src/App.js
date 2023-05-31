@@ -3,6 +3,8 @@ import './App.css';
 import axios from "axios";
 import Button from "./components/Button/Button";
 import PokemonCard from "./components/PokemonCard/PokemonCard";
+import logo from './assets/logo.png'
+
 
 function App() {
     const [pokemons, setPokemons] = useState([]);
@@ -32,9 +34,10 @@ function App() {
 
   return (
     <div className="poke-deck">
+        <img src={logo} alt="Pokemon Logo"className="logo"/>
         {pokemons &&
             <>
-                <div className="button-nav">
+                <div className="button-bar">
                     <Button
                         disabled={!pokemons.previous}
                         clickHandler={() => setEndpoint(pokemons.previous)}
